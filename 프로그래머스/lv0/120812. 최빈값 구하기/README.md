@@ -77,40 +77,8 @@
 <p>※ 공지 - 2022년 10월 17일 제한 사항 및 테스트케이스가 수정되었습니다.</p>
 
 //풀이에 대한 나의 설명
-function solution(array) {
-let arr = [];
-let count = 0;
-let num = 0;
-let max = 0;
-let result = 0;   //변수가 조금 많네요...
+![image](https://user-images.githubusercontent.com/85098747/224473469-5da5014a-9c74-4266-8a2b-c88d058fad18.png)
 
-//이 함수로 새로운 배열 arr에 카운트를 해줬어요. arr[숫자] = 카운트 수
-for(let i = 0; i < array.length; i++){ 
-    count = array[i];
-    if(arr[count] === undefined)
-        arr[count] = 1;
-    else arr[count] += 1;
-}
 
-//이 함수를 통해서 arr의 카운트 수를 비교해줬습니다.
-for(let i = 0; i < arr.length; i++){
-    if(max < arr[i]) {
-        max = arr[i]; //큰 값보다 크다면 값이 변경되고 하고
-        result = i; //result엔 최빈값을 넣어야하기때문에 i를 줬어요
-        num = 0; //이건 최빈값이 여러개 일때를 위해서 사용한 변수인데 else if문에서 마저 설명
-    }
-		/*최빈값이 여러개라는 뜻은 arr배열의 값이 같다는 것이므로 같을때는 새로운 변수 num이 1씩
-		증가되도록 해주었어요! 그래서 만약에 값이 2인값이 계속 되다가 3이 나오면 위의 if문을
-	  실행되고 num을 다시 0으로 만들어주어야지 밑에 if문에 걸리지 않을수 있습니다.*/
-    else if(max === arr[i]){
-        num += 1;
-    }
-}
-// num이 1보다 크다면 = 최빈값이 여러개라면 
-if(num >= 1) result = -1
-
-return result;
-
-}
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
